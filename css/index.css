@@ -1,0 +1,93 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ffeeb6;
+    font-family: polymath, sans-serif; /* Beste font die er is. */
+}
+
+.ding {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    position: absolute;
+    animation: beweeg 8s infinite ease-in-out, kleur 8s infinite ease-in-out, draai 8s infinite linear;
+}
+
+.yo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    font-weight: bold;
+    color: #1C1C1E;
+    z-index: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.yo:hover {
+    transform: translate(-50%, -50%) scale(3);
+    color: #ffc60a; 
+}
+
+.klein {
+    font-size: 20px;
+    color: #1C1C1E;
+    position: absolute;
+    bottom: 25%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    margin: 10px;
+}
+
+@keyframes beweeg {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    25% {
+        top: 0;
+        left: calc(100% - 100px);
+    }
+    50% {
+        top: calc(100% - 100px);
+        left: calc(100% - 100px);
+    }
+    75% {
+        top: calc(100% - 100px);
+        left: 0;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes kleur {
+    0% {
+        background-color: #3498db;
+    }
+    25% {
+        background-color: #e74c3c;
+    }
+    50% {
+        background-color: #2ecc71;
+    }
+    75% {
+        background-color: #f1c40f;
+    }
+    100% {
+        background-color: #3498db;
+    }
+}
+
+@keyframes draai {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
